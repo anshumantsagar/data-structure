@@ -8,6 +8,29 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {}
+function chunk(array, size) {
+    let chunked = [];
+    let i = 0 ;
+    while ( i < array.length ) {
+        chunked.push(array.slice(i, i+size));
+        i += size;
+    }
+    return chunked;
+}
 
 module.exports = chunk;
+
+// function chunk(array, size) {
+//     const chunked = [];
+//     for (let elem of array) {
+//       const last = chunked[chunked.length-1];
+//       if ( !last || last.length === size) {
+//         chunked.push([elem]);
+//       } else {
+//         chunked[chunked.length-1].push(elem);
+//         //this line can be written as "last.push(elem)" 
+//         //last here is acting like the pointer of the "chunked[chunked.length-1]" 
+//       }
+//     }
+//     return chunked;
+// }
