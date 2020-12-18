@@ -20,6 +20,7 @@ class Queue {
     remove() {
         return this.data.pop();
     }
+
 }
 
 module.exports = Queue;
